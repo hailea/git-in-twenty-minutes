@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/styles/app.css">
+
+    <title>Learning Git in 90minutes</title>
+</head>
+
+<body>
+    <header>
+        <hgroup>
+            <h1>&nbsp;</h1>
+        </hgroup>
+    </header>
+    <article>
+        <h1>Basic Concepts</h1>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What is Git?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">Git is the largest version
+                control system that helps developers to coordinate with each other and record the track of their
+                codes/douments.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What is Version Control System (VCS)?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">VCS is a system that
+                records changes to a file over time so that developers can recall specific versions later. Its purpose
+                is:
+                <p>&nbsp;</p>
+                <ol>
+                    <li>to revert files back to a previous state</li>
+                    <li>revert the entire project back to a previous state</li>
+                    <li>compare changes over time</li>
+                    <li>see who last modified something that might be causing a problem</li>
+                    <li>who introduced an issue and when, and more</li>
+                </ol>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What is Centralized Version Control System(CVCS)?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>It is a single server that contains all the versioned files, and a number of clients
+                                that check out files from that central place.<br>For many years, this has been the
+                                standard for version control.</td>
+                            <td><img class="alignnone size-full wp-image-682" style="align-items: baseline;"
+                                    src="https://haileababrha.files.wordpress.com/2016/12/cvcs.jpg" alt="cvcs.jpg"
+                                    width="300" height="250"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the advantages and disagavntages of CVCS?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li style="list-style-type: none;">
+                                        <ul>Advantages</ul>
+                                    </li>
+                                </ul>
+                                <p>&nbsp;</p>
+                                <ul>
+                                    <li>Administrator's have fine grained control over who can do what</li>
+                                    <li>Easy to administer</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li style="list-style-type: none;">
+                                        <ul>Disadvantages</ul>
+                                    </li>
+                                </ul>
+                                <p>&nbsp;</p>
+                                <ul>
+                                    <li>Single point of failure that the centralized server represents</li>
+                                    <li>For a large project, downloading the entire history is cumbersome.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are distributed version control cystems (DVCSs)??</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="position: relative; padding-bottom: 20%;">DVCS allows many software developers to
+                                work on a given project without requiring them to share a common network.<br>Developer's
+                                don’t just check out the latest snapshot of the files: they fully mirror the
+                                repository.<br>Thus if any server dies, and these systems were collaborating via it, any
+                                of the<br>client repositories can be copied back up to the server to restore it. Every
+                                clone is really a full backup of all the data.<br>Example Git, Mercurial, Bazaar and
+                                Darcs</td>
+                            <td><img class="alignnone size-full wp-image-686"
+                                    src="https://haileababrha.files.wordpress.com/2016/12/dvcs3.jpg"
+                                    alt="distributed version control system" width="300" height="300"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the main advantages of DVCS?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">It is possible to
+                collaborate with different groups of people in different ways simultaneously within the same
+                project.<br>It allows to set up several types of workflows that aren’t possible in centralized systems,
+                such as hierarchical models.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the main goals of Distributed Version Control System (DVCS)?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <ul>
+                    <li>Speed</li>
+                    <li>Simple Design</li>
+                    <li>Fully Distributed</li>
+                    <li>Strong support for non-linear development (thousands of parallel branches)</li>
+                    <li>Able to handle large projects like the Linux kernel efficiently (speed and data size)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What is Git?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">Git is a free and open
+                source distributed version control system designed to handle everything from small to very large
+                projects with speed and efficiency.<br>In Git all contributors have a copy on their own private
+                computer.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the main features of Git?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">Git thinks of its data
+                more like a set of snapshots of a miniature file system.<br>Every time you commit, or save the state of
+                your project in Git, it basically takes a picture of what all your<br>files look like at that moment and
+                stores a reference to that snapshot.<br>To be efficient, if files have not changed, Git doesn’t store
+                the file again, just a link to the previous<br>identical file it has already stored.<br>Git thinks about
+                its data more like a <strong>stream of snapshots</strong>.<br>Most other systems copied from the
+                previous generation.<br>Most operations in Git only need local files and resources to operate –
+                generally no information is needed from<br>another computer on your network. Because of this feature the
+                entire history of the project are right on your<br>local disk, most operations seem almost
+                instantaneous.<br>There is very little you can’t do if you’re offline or off VPN. In other version
+                control systems such as Perforce,<br>you can’t do much when you aren’t connected to the server; and in
+                Subversion and CVS, you can edit files,<br>but you can’t commit changes to your database (because your
+                database is offline).<br>Everything in Git is check-summed before it is stored and is then referred to
+                by that <em>checksum</em>.<br>This means it’s impossible to change the contents of any file or directory
+                without Git knowing about it.<br>This functionality is built into Git at the lowest levels and is
+                integral to its philosophy.<br>You can’t lose information in transit or get file corruption without Git
+                being able to detect it.<br>The mechanism that Git uses for this check summing is called a SHA-1
+                hash.<br>This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated
+                based on the contents of a file or directory structure in Git.<br>A SHA-1 hash looks something like
+                this: 24b9da6552252987aa493b52f8696cd6d3b00373<br>Git stores everything in its database not by file name
+                but by the hash value of its contents.<br>Git generally only adds data to its database.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the main three Git states that your file resides?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">committed, modified, and
+                staged.<br>Committed means that the data is safely stored in your local database.<br>Modified means that
+                you have changed the file but have not committed it to your database yet.<br>Staged means that you have
+                marked a modified file in its current version to go into your next commit snapshot.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the main sections of git project?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>The <cite style="color: red;"> Git directory </cite> is where Git stores the <u>metadata
+                                    and object database for your project</u>. This is the most important part of Git,
+                                and it is what is copied when you clone a repository from another computer.
+                                <p>&nbsp;</p>
+                                <p>The <cite style="color: red;">working directory</cite> is a single checkout of <u>one
+                                        version of the project</u>. These files are pulled out of the compressed
+                                    database in the Git directory and placed on disk for you to use or modify.</p>
+                                <p>The <cite style="color: red;"> staging area</cite> is a file, generally contained in
+                                    your Git directory, that <b>stores information about what will go into your next
+                                        commit</b>. It’s sometimes referred to as the “index”,<br>but it’s also common
+                                    to refer to it as the staging area.<br>If a particular version of a file is in the
+                                    Git directory, it’s considered committed.<br>If it has been modified and was added
+                                    to the staging area, it is staged.<br>And if it was changed since it was checked out
+                                    but has not been staged, it is modified.</p>
+                            </td>
+                            <td><img class="alignnone  wp-image-690"
+                                    src="https://haileababrha.files.wordpress.com/2016/12/wdsagd.png"
+                                    alt="Working Directory, Staging Area, Git Directory" width="300" height="200"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are the basic git workflow?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+                <ol>
+                    <li>Modify files in the working directory</li>
+                    <li>Stage the files, adding snapshots to the staging area</li>
+                    <li>Do a commit, which takes files as they are in the staging area and stores the snapshots
+                        permanently to the git directory</li>
+                </ol>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What is .git file?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">.git file is created at
+                the beginning of the project <em>$ git init project-name</em>.<br>The file contains all of the necessary
+                repository files a Git repository skeleton.<br>At the beginning, nothing in your project is tracked yet.
+                But it contained the following information's<br>$ ls
+                -F1<br>HEAD<br>config*<br>description<br>hooks/<br>info/<br>objects/<br>refs/</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are tracked files and untracked files?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">Each file in the working
+                directory are either in tracked or untracked states. <em>Tracked files are files that were in the last
+                    snapshot.</em><br>They can be modified, unmodified or staged. untracked files are everything else -
+                any files in the working directory that were not in the<br>last snapshot and are not in the staging
+                area.</div>
+        </div>
+        <div class="mainContainer">
+            <h3 style="color: #ef34cc;">What are remote repositories?</h3>
+            <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">They are versions of the
+                project that are hosted on the Internet or network somewhere.<em> Collaborating</em> with
+                others<br>involves managing these remote repositories and pushing and pulling data to and from them when
+                you need to share work.
+                <p>&nbsp;</p>
+                <ul>
+                    <li style="list-style-type: none;">
+                        <ul>Managing remote repositories includes</ul>
+                    </li>
+                </ul>
+                <br>
+                <ul>
+                    <li style="list-style-type: none;">
+                        <ul>$ git clone [URL], $ cd file name, $git remote are commands</ul>
+                    </li>
+                </ul>
+                <p>&nbsp;</p>
+                <ul>
+                    <li>knowing how to add remote repositories</li>
+                    <li>remove remotes that are no longer valid</li>
+                    <li>manage various remote branches and define them as being tracked or not</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <article>
+        <h1>Commonly used Git command line instructions</h1>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Configure Tooling</strong>: - <span
+                    style="font-size: 80%; background-color: #c1c1c1;">Configure user information for all local
+                    users</span></div>
+            <p><span style="color: red;">git config</span> is a tool that lets you get and set configuration variables
+                that control all aspects of<strong> how Git looks and operates</strong>. These variables can be stored
+                in three different places</p>
+            <ol>
+                <li>/etc/gitconfig file: Contains values for every user on the system and all their repositories. If you
+                    pass the option --system to git config, it reads and writes from this file specifically.</li>
+                <li>~/.gitconfig or ~/.config/git/config file: Specific to your user. You can make Git read and write to
+                    this file specifically by passing the --global option.</li>
+                <li>config file in the Git directory (that is, .git/config) of whatever repository you’re currently
+                    using: Specific to that single repository.</li>
+            </ol>
+            <ul>
+                <li style="list-style-type: none;">
+                    <ul>Commands</ul>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <ul>
+                <li><em style="color: #301c97;">$ git config --global user.name "[name]"</em>: - Sets the name you want
+                    attached to the commit transactions</li>
+                <li><em style="color: #301c97;">$ git config --global email.name "[email address]"</em>: - Sets the
+                    email you want attached to the commit transactions</li>
+                <li><em style="color: #301c97;">$ git config --global color.ui auto</em>: - Enables helpful colorization
+                    of the command line output</li>
+                <li><em style="color: #301c97;">$ git config --list</em>: - Check user name and email configuration.
+                </li>
+                <li><em style="color: #301c97;">$ git config user.name</em>: - To check user name/ lists the user name
+                </li>
+                <li><em style="color: #301c97;">$ git config user.email</em>: - To check email address of the user/
+                    lists the email address</li>
+                <li><em style="color: #301c97;">$ git config --global core.editor '"C:/Users/.../textEditorName.exe"
+                        -multiInst -nosession'</em>: - To configure default editor.</li>
+                <li><em style="color: #301c97;">$ git help Example $ git help config</em>: - To get help</li>
+                <li><em style="color: #301c97;">$ git help Example $ git config --help</em>: - To get help</li>
+                <li><em style="color: #301c97;">$ man git- Example $ man git-config</em>: - To get help</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Create Repositories</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Start
+                    a new repository or Obtain one from an exisiting URL</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git init [project name]</em>: - Creates a new local repository with
+                    the speciﬁed name</li>
+                <li><em style="color: #301c97;">$ git init clone [URL]</em>: - Downloads a project and its entire
+                    version history</li>
+                <li><em style="color: #301c97;">$ git clone [url]</em>: - The following command is also used to clone an
+                    existing Git Repository from the server/ internet.<br>This command is used to get a copy of an
+                    existing Git repository – for example, a project you’d like to contribute to –the command you need
+                    is git clone.<br>Every version of every file for the history of the project is pulled down by
+                    default when you run git clone.</li>
+                <li><em style="color: #301c97;">$ git clone [URL] repoName</em>: - To rename the repository name</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Make Changes</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Review edits
+                    and craft a commit transaction</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git status</em>: - Lists all new or modified files to be committed
+                </li>
+                <li><em style="color: #301c97;">$ git diff</em>: - The git diff command tells exactly what you changed,
+                    not just which files were changed. It shows the exact lines added and removed – the patch. It
+                    compares what is in your working directory with what is in your staging area. It shows file
+                    differences not yet staged</li>
+                <li><em style="color: #301c97;">$ git add [file]</em>&gt;: - Snapshots the files in preparation for
+                    versioning. It is also used to begin tracking a new file,to stage files, and to do other things like
+                    marking merge-conflicted files as resolved.</li>
+                <li><em style="color: #301c97;">$ git diff --staged</em>: - Shows file differences between staging and
+                    the last file version</li>
+                <li><em style="color: #301c97;">$ git reset [file]</em>: - Unstaged the file but preserves its contents
+                </li>
+                <li><em style="color: #301c97;">$ git commit -m ["Descriptive message"]</em>: - It saves all files
+                    except the unstaged files i.e. files that you haven't run git add on since you edited them. It
+                    records file snapshots permanently in version history</li>
+                <li><em style="color: #301c97;">$ git commit --amend</em>: - used to undoing changes that you have made
+                    i.e. adding or replacing Example add file and amend it</li>
+                <li><em style="color: #301c97;">$ git commit --amend</em>: - used to undoing changes that you have made
+                    i.e. adding or replacing Example add file and amend it</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Group Changes</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Name a
+                    series of commits and combine completed efforts</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git branch</em>: - Lists all local branches in the current repository
+                </li>
+                <li><em style="color: #301c97;">$ git branch [branch-name]</em>: - Creates a new branch</li>
+                <li><em style="color: #301c97;">$ git checkout [branch-name]</em>&gt;: - Switches to the specified
+                    branch and updates the working directory</li>
+                <li><em style="color: #301c97;">$ git merge [branch]</em>: - Combines the specified branch's history
+                    into the current branch</li>
+                <li><em style="color: #301c97;">$ git branch -d [branch-name]</em>: - deletes the specified branch</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Redo Commits</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Erase
+                    mistakes and craft replacment history</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git reset [commit]</em>: - Undoes all commit after [commit],
+                    preserving changes locally.</li>
+                <li><em style="color: #301c97;">$ git reset --hard [commit]</em>: - Discards all history and changes
+                    back to the specified commit</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Refactor Filenames</strong>: - <span
+                    style="font-size: 80%; background-color: #c1c1c1;">Relocate and remove versioned files</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git rm [file]</em>: - The git rm command remove a file from Git, more
+                    accurately,<br>remove it from your staging area and then commit.<br>It also removes the file from
+                    the working directory so you don’t see it as an untracked file the next time around.<br>In general,
+                    it removes the file from working directory and stages the deletion</li>
+                <li><em style="color: #301c97;">$ git rm --cached [file]</em>: - It helps to keep the file in your
+                    working tree but remove it from your staging area.<br>In other words, you may want to keep the file
+                    on your hard drive but not have Git track it anymore.<br>This is particularly useful if you forgot
+                    to add something to your .gitignore<br>file and accidentally staged it, like a large log file or a
+                    bunch of .a compiled files.<br>In General, it removes the file from version control but preserves
+                    the file locally</li>
+                <li><em style="color: #301c97;">$ git mv [file-original] [file-renamed]</em>: - Renames the file and
+                    prepares for commit</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Review History</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Browse and
+                    inspect the evolution of project files</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git log</em>: - used to look the history of files or commits.<br>It
+                    lists the commits made in that repository in reverse chronological order – that is,<br>the most
+                    recent commits show up first.<br>The optional value <strong>-p</strong> Shows the difference
+                    introduced in each commit. <strong> git log -p --2</strong><br>shows only the last two commits lists
+                    version history for the current branch</li>
+                <li><em style="color: #301c97;">$ git log --follow [file]</em>: - Lists version history for a file
+                    including renames</li>
+                <li><em style="color: #301c97;">$ git diff [first branch]...[second branch]</em>: - Shows content
+                    differences between two branches</li>
+                <li><em style="color: #301c97;">$ git difftool</em>: - Gives graphical software like emerge changes.
+                </li>
+                <li><em style="color: #301c97;">$ git difftool --tool-help</em>: - Tells your difftool device in your
+                    system.</li>
+                <li><em style="color: #301c97;">$ git show [commit]</em>: - outputs metadata and content changes of the
+                    specified commit</li>
+            </ul>
+            <table>
+                <caption>Common Options to git log</caption>
+                <tbody>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>-p</td>
+                        <td>Show the patch introduced with each commit.</td>
+                    </tr>
+                    <tr>
+                        <td>--stat</td>
+                        <td>Show statistics for files modified in each commit.</td>
+                    </tr>
+                    <tr>
+                        <td>--shortstat</td>
+                        <td>Display only the changed/insertions/deletions line from the --stat command.</td>
+                    </tr>
+                    <tr>
+                        <td>--name-only</td>
+                        <td>Show the list of files modified after the commit information.</td>
+                    </tr>
+                    <tr>
+                        <td>--name-status</td>
+                        <td>Show the list of files affected with added/modified/deleted information as well.</td>
+                    </tr>
+                    <tr>
+                        <td>--abbrev-commit</td>
+                        <td>Show only the first few characters of the SHA-1 checksum instead of all 40.</td>
+                    </tr>
+                    <tr>
+                        <td>--relative-date</td>
+                        <td>Display the date in a relative format (for example, “2 weeks ago”) instead of using the full
+                            date format.</td>
+                    </tr>
+                    <tr>
+                        <td>--graph</td>
+                        <td>Display an ASCII graph of the branch and merge history beside the log output.</td>
+                    </tr>
+                    <tr>
+                        <td>--pretty</td>
+                        <td>Show commits in an alternate format. Options include oneline, short, full, fuller, and
+                            format</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Suppress Tracking</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Exclude
+                    temporary files and paths</span></div>
+            <ul>
+                <li><em style="color: #301c97;">*.log<br>build/<br>temp-*</em>: -<br>A text ﬁle named .gitignore
+                    suppresses accidental versioning of ﬁles and paths matching the speciﬁed patterns</li>
+                <li><em style="color: #301c97;">$ git ls-files --other --ignored --exclude-standard </em>: -Lists all
+                    ignored ﬁles in this project</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Save Fragments</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">Shelve and
+                    restore incomplete changes</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git stash</em>: - Temporarily stores all modified tracked files.</li>
+                <li><em style="color: #301c97;">$ git stash pop</em>: - Restores the most recently stashed files</li>
+                <li><em style="color: #301c97;">$ git stash list</em>: - Lists all stashed changesets</li>
+                <li><em style="color: #301c97;">$ git stash drop</em>: - Discards the most recently stashed changeset
+                </li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Synchronize Changes</strong>: - <span
+                    style="font-size: 80%; background-color: #c1c1c1;">Register a repository book mark and exchanges
+                    version history</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git fetch [bookmark]</em>: - Downloads all history from the repository
+                    bookmark.</li>
+                <li><em style="color: #301c97;">$ git merge [bookmark]/[branch</em>: - Combines book mark's branch in to
+                    current local branch</li>
+                <li><em style="color: #301c97;">$ git push [alias] [branch]</em>: - Uploads all local branch commits to
+                    Github</li>
+                <li><em style="color: #301c97;">$ git pull </em>: - Download bookmark history and incorporates changes
+                </li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Some helpful commands</strong>: - <span style="font-size: 80%; background-color: #c1c1c1;">
+                    Window and other commands helpful to begin</span></div>
+            <ul>
+                <li><em style="color: #301c97;">$ git --version</em>: - To check weather the terminal successfully
+                    installed. Open the terminal window and run the command. It tells the version of git along the os.
+                </li>
+                <li><em style="color: #301c97;">$ echo 'project name' &gt; file name</em>: - The git echo command is
+                    used to add a new file to your repository.</li>
+                <li><em style="color: #301c97;">$ echo 'comments in the file' &gt;&gt; file name</em>: - This echo
+                    command helps to write a comment inside the file.</li>
+                <li><em style="color: #301c97;"><br>$ cat .gitignore<br>*.[oa]<br>*~<br></em>: - Used to create a list
+                    of files that you don't want Git to automatically add or even show you as being
+                    untracked.<br>Examples log files, or files produced by your build system. In the above example files
+                    that end with .o or .a or ~ will be ignored.<br>Other examples .gitignore file:</li>
+            </ul>
+        </div>
+        <div style="color: #1c1c41; border: 2px dashed #ef34cc; margin: 1%; padding: 1%;">
+            <div><strong>Some .gitignore file examples</strong>:</div>
+            <ul>
+                <li>*.a : - # no .a files. It ignores files that end with .a</li>
+                <li>!lib.a : - # Ignores all files that ends in .a but do track lib.a, even though you're ignoring .a
+                    files above</li>
+                <li>/TODO : - # only ignore the TODO file in the current directory, not subdir/TODO</li>
+                <li>build/ : - # ignore all files in the build/ directory</li>
+                <li>doc/*.txt: - # ignore doc/notes.txt, but not doc/server/arch.txt</li>
+                <li>doc/**/*.pdf: - # ignore all .pdf files in the doc/ directory</li>
+            </ul>
+        </div>
+    </article>
+    <footer
+        style="border: 2px dashed #efaacc; color: #301c97; margin: 5%; font-size: smaller; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        The average person reads 800 words per minute. However, in order to comprehend the concepts properly, this
+        summary note assumes 100 words per minute.???</footer>
+
+</body>
+
+</html>
