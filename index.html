@@ -1,35 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <title>Git Tutorial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Git/Github</title>
 </head>
+
 <body>
-    <header>
-        <h1></h1>
-    </header>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-2">
-                    <h1 class="has-text-warning">Lorem Ipsum</h1>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dolorum distinctio aspernatur obcaecati sit ad facere inventore dolorem, quos in voluptatibus assumenda asperiores beatae tempore earum. Iste possimus ipsum explicabo!</div>
-                <div class="column is-7">
-                    <h1 class="has-text-primary">Nope Lorem</h1>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, odit? Eos aperiam minus porro laudantium consequuntur! Quidem ipsam corporis minima. Sint porro velit repellendus consequatur facere? Repellat quaerat in molestiae.
-                Tenetur amet officiis ea nisi enim doloribus? Maxime laborum nostrum culpa ducimus earum, quibusdam deleniti neque, quo maiores omnis inventore, nam sint voluptates aut veniam aliquid ad dolores tempore. Dicta.
-                Obcaecati culpa voluptate neque laborum, placeat architecto aliquid, dolore dolores enim deleniti reiciendis in minus. Rem ipsum molestias asperiores esse iure tempora pariatur? Delectus repellendus et unde. Eum, ipsum harum.</div>
-                <div class="column is-3">
-                    <h1 class="has-text-info">Bla bla</h1>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ducimus qui earum voluptate enim, perspiciatis labore dignissimos odio at vitae voluptatem velit rem ut molestias mollitia laborum, nostrum quisquam eum!</div>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center"><u> Git/Github Tutorial </u></h1>
+
+            <div class="col-md-9 text-justify">
+                <h2>Common Git Commands</h2>
+                <dl class="p-2 m-2"> <span class="border border-info px-3">To start a working area</span>
+                    <dt>init</dt>
+                    <dd class="mx-3">Create an empty Git repository or reinitaialize an existing one.</dd>
+                    <dd><code class="mx-5">$ git init</code></dd>
+                    <dt>config</dt>
+                    <dd class="mx-3">get and set configuration variables that control all aspects of how Git looks and
+                        operates</dd>
+                    <dd><code class="mx-5">$ git config --global core.editor "code --wait" </code></dd>
+                    <dd><code class="mx-5"> &nbsp;  //fire up visual studio code to edit messages</code></dd>
+                    <dd><code class="mx-5">$ git config --global user.name "Jim Harbert" //to create user </code></dd>
+                    <dd><code class="mx-5"> $ git config --global user.email "jim@email.com" //user email </code></dd>
+                    <dd><code class="mx-5"> $ git config --global user.name // to see the cureent user </code></dd>
+                    <dd><code class="mx-5"> $ git config --global user.email // to see the cureent user email </code></dd>
+                    <dd><code class="mx-5"> $ git config --global --list // to see the curent status i.e email,name, editor  </code></dd>
+                    
+                    <dd><code class="mx-5"> $ git config --global init.defaultBranch main // To set main as the default branch name </code></dd>
+                    
+                    
+                    <dt>clone</dt>
+                    <dd class="mx-3">to clone a repository into a new directory or to get a copy of an existing Git repository </dd>
+                    <dd><code class="mx-5"> $ git clone https://github.com/libgit2/libgit2 mylibgit</code> <br> 
+                        <span class="mx-5"> //the target directory is called mylibgit </span> </dd>
+                    <dd><code class="mx-5"> $ git clone https://github.com/libgit2/libgit2 </code> <br>
+                        <span class="mx-5"> //That creates a directory named libgit2, initializes a .git directory inside it  </span> </dd>
+                    
+                </dl>
+                <hr class="bg-info m=0 p=0">
+                <dl class="p-2 m-2"> <span class="border border-info px-3">Work on the current change</span>
+                    <dt>add</dt>
+                    <dd class="mx-3">add file contents to the index</dd>
+                    <dd><code class="mx-5"> $ git add filename // to add a specific file to the staging area </code></dd>
+                    <dd><code class="mx-5"> $ git add . // to add all files to the staging area </code></dd>
+                    <dt>mv</dt>
+                    <dd class="mx-3">Move or rename a file, a directory, or a symlink</dd>
+                    <dt>restore</dt>
+                    <dd class="mx-3">Restore working tree files</dd>
+                    <dd><code class="mx-5"> $ git restore --cached filename // to return back to the mdified area </code></dd>
+                    <dt>rm</dt>
+                    <dd class="mx-3">Remove files from the working tree and from the inex</dd>
+                    
+                    <dt>sparse-checkout</dt>
+                    <dd class="mx-3"> Initialize and modify the sparse-checkout</dd>
+                </dl>
+                <hr class="bg-info m-0 p-0">
+                <dl class="p-2 m-2"> <span class="border border-info px-3"> Explain the history and state</span>
+                    <dt>bisect</dt>
+                    <dd class="mx-3">Use binary search to find the commit that introduced a bug</dd>
+                    <dt>diff</dt>
+                    <dd class="mx-3">Show changes between commits, commit and working tree, etc</dd>
+                    <dt>grep</dt>
+                    <dd class="mx-3">Print lines matching a pattern</dd>
+                    <dt>log</dt>
+                    <dd class="mx-3">Show commit logs</dd>
+                    <dt>show</dt>
+                    <dd class="mx-3">Show various types of objects</dd>
+                    <dt>status</dt>
+                    <dd class="mx-3">Show the working tree status</dd>
+                </dl>
+                <hr class="bg-info m-0 p-0">
+                <dl class="p-2 m-2"><span class="border border-info px-3"> Grow, mark and tweak common history</span>
+                    <dt>Branch</dt>
+                    <dd class="mx-3">List, create, or delete branches</dd>
+                    <dt>Commit</dt>
+                    <dd class="mx-3">Record changes to the repository</dd>
+                    <dt>Merge</dt>
+                    <dd class="mx-3">Join two or more development histories together</dd>
+                    <dt>Rebase</dt>
+                    <dd class="mx-3">Reapply commits on top of another base tip</dd>
+                    <dt>Reset</dt>
+                    <dd class="mx-3">Reset current HEAD to the specified state</dd>
+                    <dt>Switch</dt>
+                    <dd class="mx-3">Switch branches</dd>
+                    <dt>tag</dt>
+                    <dd class="mx-3">Create, list, delete or verify a tag object signed with GPG</dd>
+                </dl>
+                <hr class="bg-info m-0 p-0">
+                <dl class="p-2 m-2"><span class="border border-info px-3"> collaborate</span>
+                    <dt>fetch</dt>
+                    <dd class="mx-3">Download objects and refs from another repository</dd>
+                    <dt>pull</dt>
+                    <dd class="mx-3">Fetch from and integrate with another repository or a local branch</dd>
+                    <dt>push</dt>
+                    <dd class="mx-3">Update remote refs along with associated objects</dd>
+                </dl>
+                <div class="p-2 m-2">
+                    <span class="border border-info px-3"> Some bash/commandline commands</span> <br>
+                    <code class="px-3">$ code . //to open visual studio code</code> <br>
+                    
+                </div>
+                <h2>Some common vocabularies</h2>
+                <dl class="border border-info px-3">
+                    <dt>Repositories/Repo's</dt>
+                    <dd class="mx-3">A container for a project you want to track with Git.</dd>
+                    <dt>branch</dt>
+                    <dd class="mx-3">A line of development</dd>
+                    <dt>checkout</dt>
+                    <dd class="mx-3">The action of updating all or part of the working tree with a tree object or blob from the object database, and updating the index and HEAD if the whole working tree has been pointed at a new branch.</dd>
+                    <dt>commit</dt>
+                    <dd class="mx-3">As a noun: A single point in the Git history</dd>
+                    <dd class="mx-3">As a verb: The action of storing a new snapshot of the project’s state in the Git history</dd>
+                    <dt>fetch</dt>
+                    <dd class="mx-3">Fetching a branch means to get the branch’s head ref from a remote repository, to find out which objects are missing from the local object database, and to get them, too.</dd>
+                    <dt>master</dt>
+                    <dd class="mx-3">the default development branch</dd>
+                    <dt>merge</dt>
+                    <dd class="mx-3">To bring the contents of another branch (possibly from an external repository) into the current branch.</dd>
+                    <dt>octopus</dt>
+                    <dd class="mx-3">to merge moretahn two branches</dd>
+                    <dt>pull</dt>
+                    <dd class="mx-3">Pulling a branch means to fetch it and merge it. </dd>
+                    <dt>push</dt>
+                    <dd class="mx-3">The git push command is used to transfer or push the commit, which is made on a local branch in your computer to a remote repository like GitHub.</dd>
+                    <dt>remote repository</dt>
+                    <dd class="mx-3">A repository which is used to track the same project but resides somewhere else. To communicate with remotes, see fetch or push.</dd>
+                    <dt>Working Tree</dt>
+                    <dd class="mx-3">The tree of actual checked out files. The working tree normally contains the contents of the HEAD commit’s tree, plus any local changes that you have made but not yet committed.</dd>
+                
+                </dl>
+            </div>
+            <div class="col-md-3">
+                <h2 class="text-center">KeyWords</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">init</li>
+                    <li class="list-group-item">clone</li>
+                    <li class="list-group-item">diff</li>
+                    <li class="list-group-item">branch</li>
+                    <li class="list-group-item">merge</li>
+                    <li class="list-group-item">status</li>
+                    <li class="list-group-item">add</li>
+                    <li class="list-group-item">push</li>
+                    <li class="list-group-item">pull</li>
+                    <li class="list-group-item">fetch</li>
+
+
+                </ul>
+                <p>
+                    usage: git <br>[--version] <br>[--help]<br> [-C &lt;path&gt;] <br>[-c
+                    &lt;name&gt;=&lt;value&gt;]<br>
+                    [--exec-path[=&lt;path&gt;]]<br> [--html-path] <br>[--man-path]<br> [--info-path]<br>
+                    [-p | --paginate | -P | --no-pager] <br>[--no-replace-objects]<br> [--bare]<br>
+                    [--git-dir=&lt;path&gt;] <br>[--work-tree=&lt;path&gt;]<br> [--namespace=&lt;name&gt;] <br>
+                    [--super-prefix=&lt;path&gt;]<br> [--config-env=&lt;name&gt;=&lt;envvar&gt;]<br>
+                    &lt;command&gt; [&lt;args&gt;]
+                </p>
             </div>
         </div>
-    </section>
-    <footer>
-        <h4 class="subtitle has-text-danger">Footer is her</h4>
-    </footer>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
