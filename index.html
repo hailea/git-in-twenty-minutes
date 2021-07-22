@@ -53,12 +53,13 @@
                     <dd><code class="mx-5"> $ git add . // to add all files to the staging area </code></dd>
                     <dt>mv</dt>
                     <dd class="mx-3">Move or rename a file, a directory, or a symlink</dd>
+                    <dd><code class="mx-5"> $ git mv &lt;source&gt; &lt;destination&gt; </code></dd>
                     <dt>restore</dt>
                     <dd class="mx-3">Restore working tree files</dd>
                     <dd><code class="mx-5"> $ git restore --cached filename // to return back to the mdified area </code></dd>
                     <dt>rm</dt>
                     <dd class="mx-3">Remove files from the working tree and from the inex</dd>
-                    
+                    <dd><code class="mx-5"> $ git rm filename </code></dd>
                     <dt>sparse-checkout</dt>
                     <dd class="mx-3"> Initialize and modify the sparse-checkout</dd>
                 </dl>
@@ -68,27 +69,35 @@
                     <dd class="mx-3">Use binary search to find the commit that introduced a bug</dd>
                     <dt>diff</dt>
                     <dd class="mx-3">Show changes between commits, commit and working tree, etc</dd>
+                    <dd><code class="mx-5"> $ git diff</code></dd>
                     <dt>grep</dt>
                     <dd class="mx-3">Print lines matching a pattern</dd>
+                    <dd><code class="mx-5"> $ git grep searchtext </code></dd>
+                    <dd><code class="mx-5">$ git grep "bisect" &nbsp; // shows where bisect is located and some details </code></dd>
                     <dt>log</dt>
                     <dd class="mx-3">Show commit logs</dd>
                     <dd><code class="mx-5"> $ git log </code></dd>
                     <dd><code class="mx-5"> &nbsp;//shows detail logs such as commit timestamps, author, email and commit msg </code></dd>
                     <dd><code class="mx-5"> $ git log --oneline // commit msg and initials of timestamp </code></dd>
                     <dt>show</dt>
-                    <dd class="mx-3">Show various types of objects</dd>
+                    
+                    <dd class="mx-3">Show various types of objects. For commits it shows the log message and textual diff. It also presents the merge commit in a special format as produced by git diff-tree --cc.</dd>
+                    <dd><code class="mx-5"> $ git show </code></dd>
                     <dt>status</dt>
                     <dd class="mx-3">Show the working tree status</dd>
+                    <dd><code class="mx-5"> $ git status </code></dd>
                 </dl>
                 <hr class="bg-info m-0 p-0">
                 <dl class="p-2 m-2"><span class="border border-info px-3"> Grow, mark and tweak common history</span>
                     <dt>branch</dt>
                     <dd class="mx-3">List, create, or delete branches</dd>
+                    <dd><code class="mx-5"> $ git branch branchname </code></dd>
                     <dt>commit</dt>
                     <dd class="mx-3">Record changes to the repository</dd>
                     <dd><code class="mx-5"> $ git commit -m "descriptive messages" </code></dd>
                     <dt>merge</dt>
                     <dd class="mx-3">Join two or more development histories together</dd>
+                    <dd><code class="mx-5"> $ git merge branchfilename //from master </code></dd>
                     <dt>rebase</dt>
                     <dd class="mx-3">Reapply commits on top of another base tip</dd>
                     <dt>checkout</dt>
@@ -99,23 +108,43 @@
                     <dd class="mx-3">Reset current HEAD to the specified state</dd>
                     <dd><code class="mx-5"> $ git reset snapshot-num </code></dd>
                     <dt>Switch</dt>
-                    <dd class="mx-3">Switch branches</dd>
+                    <dd class="mx-3">Switch branches. Switch to a specified branch. The working tree and the index are updated to match the branch. All new commits will be added to the tip of this branch.</dd>
+                    <dd><code class="mx-5"> $ git switch branchfilename //switch to branch filename </code></dd>
                     <dt>tag</dt>
                     <dd class="mx-3">Create, list, delete or verify a tag object signed with GPG</dd>
                 </dl>
                 <hr class="bg-info m-0 p-0">
                 <dl class="p-2 m-2"><span class="border border-info px-3"> collaborate</span>
                     <dt>fetch</dt>
-                    <dd class="mx-3">Download objects and refs from another repository</dd>
+                    <dd class="mx-3">Download objects and refs from another repository. git fetch just "downloads" the changes from the remote to your local repository. git pull downloads the changes and merges them into your current branch.</dd>
                     <dt>pull</dt>
                     <dd class="mx-3">Fetch from and integrate with another repository or a local branch</dd>
+                    <dd><code class="mx-5"> $ git pull [<options>] [<repository> [<refspec>…​]] </code></dd>
+                    <dd><code class="mx-5"> $ git pull url-address local-foldername </code></dd>
                     <dt>push</dt>
                     <dd class="mx-3">Update remote refs along with associated objects</dd>
+                    <dd><code class="mx-5"> $ git push url-address master //upload files into github </code></dd>
+                    <dt>remote</dt>
+                    <dd class="mx-3">Manage set of tracked repositories</dd>
+                    <dd><code class="mx-5"> $ git remote -v //shows remore url </code></dd>
+                    <dd><code class="mx-5"> $ git remote add origin url //uses origin instead of the long url address </code></dd>
+
+                
                 </dl>
                 <div class="p-2 m-2">
                     <span class="border border-info px-3"> Some bash/commandline commands</span> <br>
                     <code class="px-3">$ code . //to open visual studio code</code> <br>
                     
+                </div>
+                <hr class="bg-info m-0 p-0">
+              
+                <div>
+                    <h2>Github</h2>
+                    <ul class="p-2 m-2 border border-info">
+                    <li>It is a service that let us setup hosted repositories</li>
+                    </ul>
+               
+
                 </div>
                 <h2>Some common Terms</h2>
                 <dl class="border border-info px-3">
@@ -148,7 +177,9 @@
                 </dl>
             </div>
             <div class="col-md-3">
-                <h2 class="text-center">KeyWords</h2>
+                <h2>Links</h2>
+                <a href="resources/pages/git-tutorial.html">Learning Git in 90 minutes</a>
+                <h2>KeyWords</h2>
                 <ul class="list-group">
                     <li class="list-group-item">init</li>
                     <li class="list-group-item">clone</li>
@@ -160,8 +191,6 @@
                     <li class="list-group-item">push</li>
                     <li class="list-group-item">pull</li>
                     <li class="list-group-item">fetch</li>
-
-
                 </ul>
                 <p>
                     usage: git <br>[--version] <br>[--help]<br> [-C &lt;path&gt;] <br>[-c
